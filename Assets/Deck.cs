@@ -50,4 +50,9 @@ public class Deck : MonoBehaviour, IPointerClickHandler
     {
         
     }
+
+    public void setCards(List<Card> newCards)
+    {
+        cards = newCards;
+    }
 }

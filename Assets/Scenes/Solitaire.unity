@@ -128,6 +128,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1898333451}
     m_Modifications:
+    - target: {fileID: 1536769313046435, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: startingNum
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536769313046435, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: cardBack
+      value: 
+      objectReference: {fileID: 21300000, guid: 19e36f016bde69b49bbfb0c94236faa9,
+        type: 3}
     - target: {fileID: 1536769313046444, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -215,6 +224,10 @@ PrefabInstance:
     - target: {fileID: 1536769313046447, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
       propertyPath: m_Name
       value: slot (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536769313046447, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: m_TagString
+      value: slot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
@@ -571,6 +584,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingNum: 0
   mostRecent: {fileID: 0}
+  cardPlace: []
+  cards: []
+  cardBack: {fileID: 0}
 --- !u!1 &747056005
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,6 +675,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1898333451}
     m_Modifications:
+    - target: {fileID: 1536769313046435, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: startingNum
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536769313046435, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: cardBack
+      value: 
+      objectReference: {fileID: 21300000, guid: 19e36f016bde69b49bbfb0c94236faa9,
+        type: 3}
     - target: {fileID: 1536769313046444, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -747,6 +772,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: slot (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1536769313046447, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: m_TagString
+      value: slot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
 --- !u!224 &789753994 stripped
@@ -762,6 +791,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1898333451}
     m_Modifications:
+    - target: {fileID: 1536769313046435, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: startingNum
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536769313046435, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: cardBack
+      value: 
+      objectReference: {fileID: 21300000, guid: 19e36f016bde69b49bbfb0c94236faa9,
+        type: 3}
     - target: {fileID: 1536769313046444, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -849,6 +887,10 @@ PrefabInstance:
     - target: {fileID: 1536769313046447, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
       propertyPath: m_Name
       value: slot (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536769313046447, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: m_TagString
+      value: slot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
@@ -1040,7 +1082,7 @@ GameObject:
   - component: {fileID: 1218416717}
   m_Layer: 0
   m_Name: Deck
-  m_TagString: Untagged
+  m_TagString: deck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1124,20 +1166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b17f4fb017abc49b861c607a89aabf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cards:
-  - {fileID: 11400000, guid: 82e6e11ad764ef2449936ff9a6d38c73, type: 2}
-  - {fileID: 11400000, guid: ec3ae736627a0a041bedf4706542b689, type: 2}
-  - {fileID: 11400000, guid: c43f762df2e4eed4c838a0e778a737be, type: 2}
-  - {fileID: 11400000, guid: 6e55d7f2592b22640866370231af2f54, type: 2}
-  - {fileID: 11400000, guid: bca4a30c4a1fa4245a13face0f24d8a4, type: 2}
-  - {fileID: 11400000, guid: 173358cfd16c3274faaba8f2c14f2905, type: 2}
-  - {fileID: 11400000, guid: 480dc2729b93fd64da3e77dc07adb729, type: 2}
-  - {fileID: 11400000, guid: fdf15c5aa1d9cf044ac927c71d227af2, type: 2}
-  - {fileID: 11400000, guid: 954703dbeb3402543b8c1b081eb3c319, type: 2}
-  - {fileID: 11400000, guid: d1b03d977605c084bb8523b02368aa31, type: 2}
-  - {fileID: 11400000, guid: c8d1c51d056d37d4eab848ddbadb61d8, type: 2}
-  - {fileID: 11400000, guid: 56d02e54a639ad546952683694d5b30a, type: 2}
-  - {fileID: 11400000, guid: 5678a7dbb7dde704bba83ad5fc85e142, type: 2}
+  cards: []
   cardSlots:
   - {fileID: 946772078}
   - {fileID: 881820648}
@@ -1413,6 +1442,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1898333451}
     m_Modifications:
+    - target: {fileID: 1536769313046435, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: startingNum
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536769313046435, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: cardBack
+      value: 
+      objectReference: {fileID: 21300000, guid: 19e36f016bde69b49bbfb0c94236faa9,
+        type: 3}
     - target: {fileID: 1536769313046444, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1501,6 +1539,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: slot (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1536769313046447, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: m_TagString
+      value: slot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
 --- !u!224 &1563697041 stripped
@@ -1516,6 +1558,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1898333451}
     m_Modifications:
+    - target: {fileID: 1536769313046435, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: startingNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536769313046435, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: cardBack
+      value: 
+      objectReference: {fileID: 21300000, guid: 19e36f016bde69b49bbfb0c94236faa9,
+        type: 3}
     - target: {fileID: 1536769313046444, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1604,6 +1655,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: slot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1536769313046447, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: m_TagString
+      value: slot
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
 --- !u!224 &1780610602 stripped
@@ -1619,6 +1674,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1898333451}
     m_Modifications:
+    - target: {fileID: 1536769313046435, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: startingNum
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536769313046435, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: cardBack
+      value: 
+      objectReference: {fileID: 21300000, guid: 19e36f016bde69b49bbfb0c94236faa9,
+        type: 3}
     - target: {fileID: 1536769313046444, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1706,6 +1770,10 @@ PrefabInstance:
     - target: {fileID: 1536769313046447, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
       propertyPath: m_Name
       value: slot (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536769313046447, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: m_TagString
+      value: slot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
@@ -1836,7 +1904,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.386242
+  orthographic size: 7.064373
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1860,7 +1928,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126415772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: -1.7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1889,6 +1957,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1898333451}
     m_Modifications:
+    - target: {fileID: 1536769313046435, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: startingNum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536769313046435, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: cardBack
+      value: 
+      objectReference: {fileID: 21300000, guid: 19e36f016bde69b49bbfb0c94236faa9,
+        type: 3}
     - target: {fileID: 1536769313046444, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1975,6 +2052,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1536769313046447, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
       propertyPath: m_Name
+      value: slot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536769313046447, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
+      propertyPath: m_TagString
       value: slot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
