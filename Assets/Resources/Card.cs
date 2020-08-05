@@ -38,4 +38,14 @@ public class Card : ScriptableObject
     {
         return cardSprite;
     }
+
+    public int getNum()
+    {
+        return num;
+    }
+
+    public int getColor()
+    {
+        return color;
+    }
 }

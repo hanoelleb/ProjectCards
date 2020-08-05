@@ -18,7 +18,10 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
     static bool droppedOnSlot;
     static bool noMatch;
 
+    int index;
     int defaultOrder;
+
+    Slot parent;
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -28,10 +31,21 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
 
     public void OnDrop(PointerEventData eventData)
     {
-        print(this.getCard());
         //throw new System.NotImplementedException();
         GameObject droppedObject = eventData.pointerDrag;
-        print(droppedObject.GetComponent<CardPlace>().getCard());
+        CardPlace other = droppedObject.GetComponent<CardPlace>();
+
+        if (this.getCard().getColor() != other.getCard().getColor())
+        {
+            if (this.getCard().getNum() == other.getCard().getNum() + 1)
+            {
+                inValidPlace = true;
+                Card temp = other.getCard();
+                other.getParent().removeCard(other.getIndex());
+                parent.setCard(index+1, temp);
+            }
+        }
+       
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -70,6 +84,9 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
         
     }
 
+    public void showCard() {
+        GetComponent<SpriteRenderer>().sprite = card.getSprite();
+    }
     
     public void setCard(Card newCard)
     {
@@ -84,5 +101,30 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
     public void enableCollider()
     {
         dropBox.enabled = true;
+    }
+
+    public void setDefOrder(int order)
+    {
+        defaultOrder = order;
+    }
+
+    public void setIndex(int newIndex)
+    {
+        index = newIndex;
+    }
+
+    public int getIndex()
+    {
+        return index;
+    }
+
+    public void setParent(Slot slot)
+    {
+        parent = slot;
+    }
+
+    public Slot getParent()
+    {
+        return parent;
     }
 }
