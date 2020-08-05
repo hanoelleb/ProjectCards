@@ -15,4 +15,5 @@ MonoBehaviour:
   id: 0
   cardSprite: {fileID: 21300000, guid: 7b12275f5a3807c4091c2a3a99f2ce33, type: 3}
   group: heart
+  color: 1
   num: 5

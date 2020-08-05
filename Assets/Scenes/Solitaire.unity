@@ -247,6 +247,8 @@ GameObject:
   m_Component:
   - component: {fileID: 119726479}
   - component: {fileID: 119726480}
+  - component: {fileID: 119726481}
+  - component: {fileID: 119726482}
   m_Layer: 0
   m_Name: finish3
   m_TagString: Untagged
@@ -323,6 +325,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &119726481
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119726478}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 1.9}
+    newSize: {x: 1.4, y: 1.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1.9}
+  m_EdgeRadius: 0
+--- !u!114 &119726482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119726478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbaf585cad677c49a2ece9a2bd14f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingNum: 0
+  mostRecent: {fileID: 0}
+  cardPlace: []
+  cards: []
+  cardBack: {fileID: 0}
 --- !u!1 &394331392
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +474,8 @@ GameObject:
   m_Component:
   - component: {fileID: 586404765}
   - component: {fileID: 586404766}
+  - component: {fileID: 586404767}
+  - component: {fileID: 586404768}
   m_Layer: 0
   m_Name: finish2
   m_TagString: Untagged
@@ -505,6 +552,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &586404767
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586404764}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 1.9}
+    newSize: {x: 1.4, y: 1.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1.9}
+  m_EdgeRadius: 0
+--- !u!114 &586404768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586404764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbaf585cad677c49a2ece9a2bd14f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingNum: 0
+  mostRecent: {fileID: 0}
+  cardPlace: []
+  cards: []
+  cardBack: {fileID: 0}
 --- !u!1 &713454591
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +605,6 @@ GameObject:
   m_Component:
   - component: {fileID: 713454593}
   - component: {fileID: 713454592}
-  - component: {fileID: 713454594}
   m_Layer: 0
   m_Name: FinishSlots
   m_TagString: Untagged
@@ -570,23 +659,6 @@ RectTransform:
   m_AnchoredPosition: {x: 3.9, y: 3.66}
   m_SizeDelta: {x: 8.075798, y: 2.2431927}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &713454594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713454591}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfbaf585cad677c49a2ece9a2bd14f32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingNum: 0
-  mostRecent: {fileID: 0}
-  cardPlace: []
-  cards: []
-  cardBack: {fileID: 0}
 --- !u!1 &747056005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1273,6 +1345,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1372448611}
   - component: {fileID: 1372448612}
+  - component: {fileID: 1372448613}
+  - component: {fileID: 1372448614}
   m_Layer: 0
   m_Name: finish1
   m_TagString: Untagged
@@ -1349,6 +1423,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1372448613
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372448610}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 1.9}
+    newSize: {x: 1.4, y: 1.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1.9}
+  m_EdgeRadius: 0
+--- !u!114 &1372448614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372448610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbaf585cad677c49a2ece9a2bd14f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingNum: 0
+  mostRecent: {fileID: 0}
+  cardPlace: []
+  cards: []
+  cardBack: {fileID: 0}
 --- !u!1 &1391613320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1359,6 +1476,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1391613321}
   - component: {fileID: 1391613322}
+  - component: {fileID: 1391613323}
+  - component: {fileID: 1391613324}
   m_Layer: 0
   m_Name: finish4
   m_TagString: Untagged
@@ -1435,6 +1554,49 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1391613323
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391613320}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 1.9}
+    newSize: {x: 1.4, y: 1.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1.9}
+  m_EdgeRadius: 0
+--- !u!114 &1391613324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391613320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbaf585cad677c49a2ece9a2bd14f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingNum: 0
+  mostRecent: {fileID: 0}
+  cardPlace: []
+  cards: []
+  cardBack: {fileID: 0}
 --- !u!1001 &1563697040
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1957,15 +2119,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1898333451}
     m_Modifications:
-    - target: {fileID: 1536769313046435, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
-      propertyPath: startingNum
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536769313046435, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
-      propertyPath: cardBack
-      value: 
-      objectReference: {fileID: 21300000, guid: 19e36f016bde69b49bbfb0c94236faa9,
-        type: 3}
     - target: {fileID: 1536769313046444, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2052,10 +2205,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1536769313046447, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
       propertyPath: m_Name
-      value: slot
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536769313046447, guid: f656fb75a1fa87c4ab2b414fc578b7be, type: 3}
-      propertyPath: m_TagString
       value: slot
       objectReference: {fileID: 0}
     m_RemovedComponents: []

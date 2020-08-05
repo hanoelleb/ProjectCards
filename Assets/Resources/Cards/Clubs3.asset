@@ -15,4 +15,5 @@ MonoBehaviour:
   id: 0
   cardSprite: {fileID: 21300000, guid: 97f17e4ef93559a448d61f32c152e7a0, type: 3}
   group: club
+  color: 0
   num: 3

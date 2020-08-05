@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CardPlace.cs" />
     <Compile Include="Assets\Deck.cs" />
     <Compile Include="Assets\FinishSlot.cs" />
     <Compile Include="Assets\GameManager.cs" />

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Slot : MonoBehaviour, IDropHandler
-{
+public class Slot : MonoBehaviour { 
     [SerializeField]
     int startingNum;
 
@@ -18,12 +17,7 @@ public class Slot : MonoBehaviour, IDropHandler
     List<Card> cards;
 
     [SerializeField]
-    Sprite cardBack;
-
-    public void OnDrop(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
+    private Sprite cardBack;
 
     // Start is called before the first frame update
     void Start()
@@ -38,9 +32,12 @@ public class Slot : MonoBehaviour, IDropHandler
             for (int i = 0; i < cards.Count-1; i++)
             {
                 cardPlace[i].GetComponent<SpriteRenderer>().sprite = cardBack;
+                cardPlace[i].GetComponent<CardPlace>().setCard(cards[i]);
             }
 
             cardPlace[cards.Count-1].GetComponent<SpriteRenderer>().sprite = cards[cards.Count-1].getSprite();
+            cardPlace[cards.Count - 1].GetComponent<CardPlace>().setCard(cards[cards.Count - 1]);
+            cardPlace[cards.Count-1].GetComponent<CardPlace>().enableCollider();
         }
     }
 
@@ -52,5 +49,10 @@ public class Slot : MonoBehaviour, IDropHandler
     public void setCards(List<Card> newCards)
     {
         cards = newCards;
+    }
+
+    public Card getCard(int i)
+    {
+        return cards[i];
     }
 }

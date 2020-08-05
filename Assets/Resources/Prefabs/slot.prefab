@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1536769313046434}
   m_Layer: 0
   m_Name: slot
-  m_TagString: Untagged
+  m_TagString: slot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,6 +130,7 @@ MonoBehaviour:
   - {fileID: 2155801715841244056}
   - {fileID: 6918732266453841941}
   cards: []
+  cardBack: {fileID: 21300000, guid: 19e36f016bde69b49bbfb0c94236faa9, type: 3}
 --- !u!61 &1536769313046434
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -166,6 +167,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7530337930332847019}
   - component: {fileID: 1536768460873354}
+  - component: {fileID: 2080810631176867155}
+  - component: {fileID: 977624729738395200}
   m_Layer: 0
   m_Name: card11
   m_TagString: slotcard
@@ -242,6 +245,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2080810631176867155
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043266965993901670}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 1.9}
+    newSize: {x: 1.4, y: 1.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1.9}
+  m_EdgeRadius: 0
+--- !u!114 &977624729738395200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043266965993901670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a02978d6f3c03499efb33c91bf485f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2155801715841244056
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,6 +293,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8581100622377722407}
   - component: {fileID: 1536768460873353}
+  - component: {fileID: 3381677269782306327}
+  - component: {fileID: 892492546292308043}
   m_Layer: 0
   m_Name: card12
   m_TagString: slotcard
@@ -328,6 +371,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &3381677269782306327
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2155801715841244056}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 1.9}
+    newSize: {x: 1.4, y: 1.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1.9}
+  m_EdgeRadius: 0
+--- !u!114 &892492546292308043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2155801715841244056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a02978d6f3c03499efb33c91bf485f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2420330964125486137
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,6 +419,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1752924685252165449}
   - component: {fileID: 1536768460873362}
+  - component: {fileID: 124698708398865709}
+  - component: {fileID: 2272858468839710200}
   m_Layer: 0
   m_Name: card3
   m_TagString: slotcard
@@ -414,6 +497,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &124698708398865709
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2420330964125486137}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 1.9}
+    newSize: {x: 1.4, y: 1.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1.9}
+  m_EdgeRadius: 0
+--- !u!114 &2272858468839710200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2420330964125486137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a02978d6f3c03499efb33c91bf485f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2592972987174314238
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,6 +545,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8684124731495722710}
   - component: {fileID: 1536768460873355}
+  - component: {fileID: 6043027875976831766}
+  - component: {fileID: 1522601219376033766}
   m_Layer: 0
   m_Name: card10
   m_TagString: slotcard
@@ -500,6 +623,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &6043027875976831766
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2592972987174314238}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 1.9}
+    newSize: {x: 1.4, y: 1.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1.9}
+  m_EdgeRadius: 0
+--- !u!114 &1522601219376033766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2592972987174314238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a02978d6f3c03499efb33c91bf485f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2901825467479160054
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,6 +671,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6066325953612353660}
   - component: {fileID: 1536768460873357}
+  - component: {fileID: 8868762398749870320}
+  - component: {fileID: 4822724704246601512}
   m_Layer: 0
   m_Name: card8
   m_TagString: slotcard
@@ -586,6 +749,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &8868762398749870320
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2901825467479160054}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 1.9}
+    newSize: {x: 1.4, y: 1.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1.9}
+  m_EdgeRadius: 0
+--- !u!114 &4822724704246601512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2901825467479160054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a02978d6f3c03499efb33c91bf485f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3063768851472352548
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,6 +797,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3792539671111525078}
   - component: {fileID: 1536768460873361}
+  - component: {fileID: 5196353279685144530}
+  - component: {fileID: 8900355716966961736}
   m_Layer: 0
   m_Name: card4
   m_TagString: slotcard
@@ -672,6 +875,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &5196353279685144530
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3063768851472352548}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 1.9}
+    newSize: {x: 1.4, y: 1.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1.9}
+  m_EdgeRadius: 0
+--- !u!114 &8900355716966961736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3063768851472352548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a02978d6f3c03499efb33c91bf485f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3658647450066410944
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +923,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3514818693215513115}
   - component: {fileID: 1536768460873358}
+  - component: {fileID: 5409670261522023413}
+  - component: {fileID: 7523097863685369875}
   m_Layer: 0
   m_Name: card7
   m_TagString: slotcard
@@ -758,6 +1001,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &5409670261522023413
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3658647450066410944}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 1.9}
+    newSize: {x: 1.4, y: 1.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1.9}
+  m_EdgeRadius: 0
+--- !u!114 &7523097863685369875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3658647450066410944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a02978d6f3c03499efb33c91bf485f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4191167915259360455
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,6 +1049,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7305548554754584732}
   - component: {fileID: 1536768460873360}
+  - component: {fileID: 1933643911769969030}
+  - component: {fileID: 2101183528103312137}
   m_Layer: 0
   m_Name: card5
   m_TagString: slotcard
@@ -844,6 +1127,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1933643911769969030
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4191167915259360455}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 1.9}
+    newSize: {x: 1.4, y: 1.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1.9}
+  m_EdgeRadius: 0
+--- !u!114 &2101183528103312137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4191167915259360455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a02978d6f3c03499efb33c91bf485f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4573004246237301940
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,6 +1175,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7539983684837122432}
   - component: {fileID: 1536768460873364}
+  - component: {fileID: 8577173974875164931}
+  - component: {fileID: 6962525240709385720}
   m_Layer: 0
   m_Name: card1
   m_TagString: slotcard
@@ -930,6 +1253,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &8577173974875164931
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573004246237301940}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 1.9}
+    newSize: {x: 1.4, y: 1.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1.9}
+  m_EdgeRadius: 0
+--- !u!114 &6962525240709385720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573004246237301940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a02978d6f3c03499efb33c91bf485f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6155268895981507668
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +1301,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1748351006688966526}
   - component: {fileID: 1536768460873359}
+  - component: {fileID: 3650017086023278986}
+  - component: {fileID: 1220966715269042694}
   m_Layer: 0
   m_Name: card6
   m_TagString: slotcard
@@ -1016,6 +1379,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &3650017086023278986
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6155268895981507668}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 1.9}
+    newSize: {x: 1.4, y: 1.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1.9}
+  m_EdgeRadius: 0
+--- !u!114 &1220966715269042694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6155268895981507668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a02978d6f3c03499efb33c91bf485f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6918732266453841941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,6 +1427,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1756227939717406007}
   - component: {fileID: 1536768460873352}
+  - component: {fileID: 4767818952024339152}
+  - component: {fileID: 449987939529871516}
   m_Layer: 0
   m_Name: card13
   m_TagString: slotcard
@@ -1102,6 +1505,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &4767818952024339152
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6918732266453841941}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 1.9}
+    newSize: {x: 1.4, y: 1.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1.9}
+  m_EdgeRadius: 0
+--- !u!114 &449987939529871516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6918732266453841941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a02978d6f3c03499efb33c91bf485f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7375994882371315005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,6 +1553,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2812914255442137585}
   - component: {fileID: 1536768460873356}
+  - component: {fileID: 7277919082927630310}
+  - component: {fileID: 6730626409967184216}
   m_Layer: 0
   m_Name: card9
   m_TagString: slotcard
@@ -1188,6 +1631,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &7277919082927630310
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7375994882371315005}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 1.9}
+    newSize: {x: 1.4, y: 1.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1.9}
+  m_EdgeRadius: 0
+--- !u!114 &6730626409967184216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7375994882371315005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a02978d6f3c03499efb33c91bf485f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8183395113186887317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,6 +1679,8 @@ GameObject:
   m_Component:
   - component: {fileID: 668015098495733176}
   - component: {fileID: 1536768460873363}
+  - component: {fileID: 3868288808914488849}
+  - component: {fileID: 6657315592914457108}
   m_Layer: 0
   m_Name: card2
   m_TagString: slotcard
@@ -1274,3 +1757,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &3868288808914488849
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8183395113186887317}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4, y: 1.9}
+    newSize: {x: 1.4, y: 1.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 1.9}
+  m_EdgeRadius: 0
+--- !u!114 &6657315592914457108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8183395113186887317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a02978d6f3c03499efb33c91bf485f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

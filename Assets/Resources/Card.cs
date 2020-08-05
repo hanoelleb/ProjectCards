@@ -14,6 +14,10 @@ public class Card : ScriptableObject
     [SerializeField]
     string group;
 
+    //0 black 1 red
+    [SerializeField]
+    int color;
+
     [SerializeField]
     int num; //ace = 0, j = 11, q = 12, k = 13
    
