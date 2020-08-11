@@ -23,10 +23,43 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
 
     Slot parent;
 
+    int dragging = 1;
+
+    List<GameObject> children;
+
     public void OnDrag(PointerEventData eventData)
     {
-        SetDraggedPosition(eventData);
-        GetComponent<SpriteRenderer>().sortingOrder = 0;
+        dragging = 0;
+        children = new List<GameObject>();
+        int i = index;
+        int j = 0;
+        while (parent.getCard(i) != null && i < parent.getCardLen()-1)
+        {
+            if ((i + 1) < transform.parent.childCount)
+            {
+                j++;
+                GameObject child = transform.parent.GetChild(i + 1).gameObject;
+                child.GetComponent<CardPlace>().disableCollider();
+                children.Add(child);
+                SetDraggedPosition(child, (-0.5f*j));
+                dragging++;
+                i++;
+            }
+            else
+                break;
+        }
+
+        SetDraggedPosition(eventData.pointerDrag, 0);
+        GameObject obj = eventData.pointerDrag;
+        CardPlace place = obj.GetComponent<CardPlace>();
+
+        GetComponent<SpriteRenderer>().sortingOrder = -1;
+    }
+
+    public int getDragging()
+    {
+        //how many cards are being dropped
+        return dragging;
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -35,35 +68,71 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
         GameObject droppedObject = eventData.pointerDrag;
         CardPlace other = droppedObject.GetComponent<CardPlace>();
 
+        print("dropped");
+        print("other: " + eventData.pointerDrag.GetComponent<CardPlace>().getCard().name);
+        print("this: " + this.getCard().name);
+
         if (this.getCard().getColor() != other.getCard().getColor())
         {
+            print("color is fine");
+            print("this num: " + this.getCard().getNum());
+            print("other num: " + other.getCard().getNum());
             if (this.getCard().getNum() == other.getCard().getNum() + 1)
             {
-                inValidPlace = true;
+                print("valid");
+
+                other.inValidPlace = true;
                 Card temp = other.getCard();
-                other.getParent().removeCard(other.getIndex());
-                parent.setCard(index+1, temp);
+
+                int amount = other.getDragging();
+
+                print(eventData.pointerDrag.GetComponent<CardPlace>().dragging);
+                parent.setCard(index + 1, temp);
+                for (var i = 0; i < other.children.Count; i++)
+                {
+                    temp = other.children[i].GetComponent<CardPlace>().getCard();
+                    parent.setCard(index + i + 2, temp);           
+                }
+
+                for (var i = 0; i < eventData.pointerDrag.GetComponent<CardPlace>().dragging ; i++)
+                    other.getParent().removeCard(other.getIndex() + i + 1);
+                other.getParent().removeCard(other.getIndex());          
             }
         }
-       
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (inValidPlace)
-            print("stopped dragging");
-        else
-            transform.localPosition = start;
+        transform.localPosition = start;
+
+        inValidPlace = false;
+        dragging = 0;
+
+        int i = index;
+
+        while (parent.getCard(i) != null && i < parent.getCardLen()-1)
+        {
+            if ((i + 1) < transform.parent.childCount)
+            {
+                GameObject child = transform.parent.GetChild(i + 1).gameObject;
+                child.transform.localPosition = child.GetComponent<CardPlace>().start;
+                child.GetComponent<CardPlace>().enableCollider();
+                dragging++;
+                i++;
+            }
+            else
+                break;
+        }
 
         GetComponent<SpriteRenderer>().sortingOrder = defaultOrder;
     }
 
-    private void SetDraggedPosition(PointerEventData data)
+    private void SetDraggedPosition(GameObject data, float offSet)
     {
         Vector3 pos;
         pos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,
-        Camera.main.ScreenToWorldPoint(Input.mousePosition).y, transform.position.z);
-        transform.position = pos;
+        Camera.main.ScreenToWorldPoint(Input.mousePosition).y + offSet, transform.position.z);
+        data.transform.position = pos;
     }
 
 
@@ -76,16 +145,20 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
 
         if (card == null)
             dropBox.enabled = false;
+
+        children = new List<GameObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (GetComponent<SpriteRenderer>().sprite == null)
+            disableCollider();
     }
 
     public void showCard() {
-        GetComponent<SpriteRenderer>().sprite = card.getSprite();
+        if (card.getSprite() != null)
+            GetComponent<SpriteRenderer>().sprite = card.getSprite();
     }
     
     public void setCard(Card newCard)
@@ -101,6 +174,11 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
     public void enableCollider()
     {
         dropBox.enabled = true;
+    }
+
+    public void disableCollider()
+    {
+        dropBox.enabled = false;
     }
 
     public void setDefOrder(int order)

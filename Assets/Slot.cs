@@ -66,6 +66,16 @@ public class Slot : MonoBehaviour {
         return cards[i];
     }
 
+    public GameObject getCardPlace(int i)
+    {
+        return cardPlace[i];
+    }
+
+    public int getCardLen()
+    {
+        return cards.Count;
+    }
+
     public void setCard(int cardIndex, Card card)
     {
         cards.Add(card);
@@ -79,9 +89,9 @@ public class Slot : MonoBehaviour {
 
     public void removeCard(int cardIndex)
     {
-
         cardPlace[cardIndex].GetComponent<CardPlace>().setCard(null);
         cardPlace[cardIndex].GetComponent<SpriteRenderer>().sprite = null;
+        cardPlace[cardIndex].GetComponent<CardPlace>().disableCollider();
         cardIndex--;
         if (cardIndex >= 0)
         {
