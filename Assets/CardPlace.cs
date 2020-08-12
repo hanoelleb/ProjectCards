@@ -37,10 +37,12 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
         {
             if ((i + 1) < transform.parent.childCount)
             {
-                j++;
                 GameObject child = transform.parent.GetChild(i + 1).gameObject;
-                child.GetComponent<CardPlace>().disableCollider();
-                children.Add(child);
+                CardPlace childPlace = child.GetComponent<CardPlace>();
+                j++;
+                childPlace.disableCollider();
+                if (childPlace.getCard() != null)
+                    children.Add(child);
                 SetDraggedPosition(child, (-0.5f*j));
                 dragging++;
                 i++;
@@ -64,7 +66,6 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
 
     public void OnDrop(PointerEventData eventData)
     {
-        //throw new System.NotImplementedException();
         GameObject droppedObject = eventData.pointerDrag;
         CardPlace other = droppedObject.GetComponent<CardPlace>();
 
@@ -73,8 +74,6 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
             Card temp = other.getCard();
 
             int amount = other.getDragging();
-
-            print(eventData.pointerDrag.GetComponent<CardPlace>().dragging);
             parent.setCard(index, temp);
             for (var i = 0; i < other.children.Count; i++)
             {
@@ -97,8 +96,6 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
 
                 if (other.children.Count > 0)
                 {
-                    print("there are children " + other.children.Count);
-                    
                     for (var i = 0; i < other.children.Count; i++)
                     {
                         temp = other.children[i].GetComponent<CardPlace>().getCard();
@@ -107,14 +104,12 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
                     }
                 }
                 temp = other.getCard();
-                print("this card " + temp.name);
                 parent.setCard(this.index + 1, temp);
 
                 int firstToRemove = other.getIndex();
                 int amount = eventData.pointerDrag.GetComponent<CardPlace>().dragging;
                 if (amount > 0)
                 {
-                    print("some are dragged " + amount);
                     other.getParent().removeCard(firstToRemove);
                     for (var i = 0; i < amount; i++)
                         other.getParent().removeCard(other.getIndex() + i + 1);
@@ -230,5 +225,15 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
     public Slot getParent()
     {
         return parent;
+    }
+
+    public List<GameObject> getChildren()
+    {
+        return children;
+    }
+
+    public void setValid(bool val)
+    {
+        inValidPlace = val;
     }
 }

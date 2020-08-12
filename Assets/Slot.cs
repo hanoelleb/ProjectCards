@@ -99,8 +99,10 @@ public class Slot : MonoBehaviour {
             cardPlace[cardIndex].GetComponent<CardPlace>().enableCollider();
         }
 
-        else if (cardIndex == 0)
+        else if (cardIndex < 0)
         {
+            cardIndex = 0;
+            print("should enable");
             cardPlace[cardIndex].GetComponent<CardPlace>().enableCollider();
         }
     }

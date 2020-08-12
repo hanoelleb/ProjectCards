@@ -26,6 +26,7 @@ public class Deck : MonoBehaviour, IPointerClickHandler
         else
         {
             cardSlots[2].GetComponent<SpriteRenderer>().sprite = cards[current].getSprite();
+            cardSlots[2].GetComponent<BoxCollider2D>().enabled = true;
 
             if (++current < cards.Count)
                 cardSlots[1].GetComponent<SpriteRenderer>().sprite = cards[current].getSprite();
@@ -33,7 +34,9 @@ public class Deck : MonoBehaviour, IPointerClickHandler
                 cardSlots[1].GetComponent<SpriteRenderer>().sprite = null;
 
             if (++current < cards.Count)
+            {
                 cardSlots[0].GetComponent<SpriteRenderer>().sprite = cards[current].getSprite();
+            }
             else
                 cardSlots[0].GetComponent<SpriteRenderer>().sprite = null;
         }
