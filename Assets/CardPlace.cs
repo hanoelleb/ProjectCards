@@ -68,35 +68,61 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
         GameObject droppedObject = eventData.pointerDrag;
         CardPlace other = droppedObject.GetComponent<CardPlace>();
 
-        print("dropped");
-        print("other: " + eventData.pointerDrag.GetComponent<CardPlace>().getCard().name);
-        print("this: " + this.getCard().name);
+        if (this.getCard() == null && index == 0 && other.getCard().getNum() == 13) {
+            other.inValidPlace = true;
+            Card temp = other.getCard();
 
-        if (this.getCard().getColor() != other.getCard().getColor())
+            int amount = other.getDragging();
+
+            print(eventData.pointerDrag.GetComponent<CardPlace>().dragging);
+            parent.setCard(index, temp);
+            for (var i = 0; i < other.children.Count; i++)
+            {
+                temp = other.children[i].GetComponent<CardPlace>().getCard();
+                parent.setCard(index + i + 1, temp);
+            }
+
+            for (var i = 0; i < eventData.pointerDrag.GetComponent<CardPlace>().dragging; i++)
+                other.getParent().removeCard(other.getIndex() + i + 1);
+            other.getParent().removeCard(other.getIndex());
+            return;
+        }
+
+        if ( this.getCard().getColor() != other.getCard().getColor() )
         {
-            print("color is fine");
-            print("this num: " + this.getCard().getNum());
-            print("other num: " + other.getCard().getNum());
             if (this.getCard().getNum() == other.getCard().getNum() + 1)
             {
-                print("valid");
-
                 other.inValidPlace = true;
-                Card temp = other.getCard();
+                Card temp;
 
-                int amount = other.getDragging();
-
-                print(eventData.pointerDrag.GetComponent<CardPlace>().dragging);
-                parent.setCard(index + 1, temp);
-                for (var i = 0; i < other.children.Count; i++)
+                if (other.children.Count > 0)
                 {
-                    temp = other.children[i].GetComponent<CardPlace>().getCard();
-                    parent.setCard(index + i + 2, temp);           
+                    print("there are children " + other.children.Count);
+                    
+                    for (var i = 0; i < other.children.Count; i++)
+                    {
+                        temp = other.children[i].GetComponent<CardPlace>().getCard();
+                        if (temp != null)
+                            parent.setCard(this.index + i + 2, temp);
+                    }
                 }
+                temp = other.getCard();
+                print("this card " + temp.name);
+                parent.setCard(this.index + 1, temp);
 
-                for (var i = 0; i < eventData.pointerDrag.GetComponent<CardPlace>().dragging ; i++)
-                    other.getParent().removeCard(other.getIndex() + i + 1);
-                other.getParent().removeCard(other.getIndex());          
+                int firstToRemove = other.getIndex();
+                int amount = eventData.pointerDrag.GetComponent<CardPlace>().dragging;
+                if (amount > 0)
+                {
+                    print("some are dragged " + amount);
+                    other.getParent().removeCard(firstToRemove);
+                    for (var i = 0; i < amount; i++)
+                        other.getParent().removeCard(other.getIndex() + i + 1);
+                    //other.getParent().removeCard(firstToRemove);
+                    other.children.Clear();
+                }
+                else
+                    other.getParent().removeCard(other.getIndex());
             }
         }
     }
@@ -152,12 +178,12 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<SpriteRenderer>().sprite == null)
+        if (GetComponent<SpriteRenderer>().sprite == null && index != 0)
             disableCollider();
     }
 
     public void showCard() {
-        if (card.getSprite() != null)
+        if (card != null)
             GetComponent<SpriteRenderer>().sprite = card.getSprite();
     }
     

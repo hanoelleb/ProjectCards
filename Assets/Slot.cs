@@ -79,8 +79,8 @@ public class Slot : MonoBehaviour {
     public void setCard(int cardIndex, Card card)
     {
         cards.Add(card);
-        //cards[cardIndex] = card;
         cardPlace[cardIndex].GetComponent<SpriteRenderer>().sprite = card.getSprite();
+        print(card.name + " has index " + cardIndex);
         cardPlace[cardIndex].GetComponent<CardPlace>().setIndex(cardIndex);
         cardPlace[cardIndex].GetComponent<CardPlace>().enableCollider();
         cardPlace[cardIndex].GetComponent<CardPlace>().setCard(card);
@@ -96,6 +96,11 @@ public class Slot : MonoBehaviour {
         if (cardIndex >= 0)
         {
             cardPlace[cardIndex].GetComponent<CardPlace>().showCard();
+            cardPlace[cardIndex].GetComponent<CardPlace>().enableCollider();
+        }
+
+        else if (cardIndex == 0)
+        {
             cardPlace[cardIndex].GetComponent<CardPlace>().enableCollider();
         }
     }
