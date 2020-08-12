@@ -67,8 +67,35 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
     public void OnDrop(PointerEventData eventData)
     {
         GameObject droppedObject = eventData.pointerDrag;
+
+        //handle card from deck
+        DeckPlace fromDeck = droppedObject.GetComponent<DeckPlace>();
+        if (fromDeck != null)
+        {
+            Card temp = fromDeck.getCard();
+            if (this.getCard() == null && index == 0 && temp.getNum() == 13)
+            {
+                parent.setCard(index+1, temp);
+            }
+
+
+            //other cases
+            if (this.getCard().getColor() != fromDeck.getCard().getColor())
+            {
+                if (this.getCard().getNum() == fromDeck.getCard().getNum() + 1)
+                {
+                    parent.setCard(index+1, temp);
+                    fromDeck.removeCard();
+                }
+            }
+
+            return;
+        }
+
         CardPlace other = droppedObject.GetComponent<CardPlace>();
 
+
+        //Handle king on empty slot
         if (this.getCard() == null && index == 0 && other.getCard().getNum() == 13) {
             other.inValidPlace = true;
             Card temp = other.getCard();
@@ -87,6 +114,7 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
             return;
         }
 
+        //Handle all other cases
         if ( this.getCard().getColor() != other.getCard().getColor() )
         {
             if (this.getCard().getNum() == other.getCard().getNum() + 1)

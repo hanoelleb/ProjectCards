@@ -12,7 +12,6 @@ public class FinishPlace : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHa
     {
         sr = GetComponent<SpriteRenderer>();
         cards = new List<Card>();
-        print("started.");
     }
 
     // Update is called once per frame
@@ -23,7 +22,16 @@ public class FinishPlace : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHa
     
     public void OnDrop(PointerEventData eventData)
     {
-        CardPlace other = eventData.pointerDrag.GetComponent<CardPlace>();
+        GameObject droppedObject = eventData.pointerDrag;
+        //handle from deck
+        DeckPlace fromDeck = droppedObject.GetComponent<DeckPlace>();
+        if (fromDeck != null)
+        {
+            print("from deck");
+            return;
+        }
+
+        CardPlace other = droppedObject.GetComponent<CardPlace>();
         Card newCard = other.getCard();
 
         print(newCard.name);
