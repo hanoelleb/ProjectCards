@@ -14,6 +14,8 @@ public class Deck : MonoBehaviour, IPointerClickHandler
     int current;
     int remove;
 
+    bool first = true;
+
     public void OnPointerClick(PointerEventData eventData)
     {
         remove += 3;
@@ -64,7 +66,6 @@ public class Deck : MonoBehaviour, IPointerClickHandler
                 cardSlots[0].GetComponent<SpriteRenderer>().sprite = null;
                 cardSlots[0].GetComponent<DeckPlace>().setCard(null);
             }
-            print("remove: " + remove);
         }
     }
 
@@ -73,6 +74,7 @@ public class Deck : MonoBehaviour, IPointerClickHandler
     {
         current = -1;
         remove = -3;
+        first = false;
     }
 
     // Update is called once per frame
@@ -84,15 +86,28 @@ public class Deck : MonoBehaviour, IPointerClickHandler
     public void setCards(List<Card> newCards)
     {
         cards = newCards;
+        current = -1;
+        remove = -3;
+
+        if (!first)
+        {
+            cardSlots[0].GetComponent<SpriteRenderer>().sprite = null;
+            cardSlots[0].GetComponent<DeckPlace>().setCard(null);
+            cardSlots[0].GetComponent<DeckPlace>().disableCollider();
+
+            cardSlots[1].GetComponent<SpriteRenderer>().sprite = null;
+            cardSlots[1].GetComponent<DeckPlace>().setCard(null);
+            cardSlots[1].GetComponent<DeckPlace>().disableCollider();
+
+            cardSlots[2].GetComponent<SpriteRenderer>().sprite = null;
+            cardSlots[2].GetComponent<DeckPlace>().setCard(null);
+            cardSlots[2].GetComponent<DeckPlace>().disableCollider();
+        }
     }
 
     public void handleRemove(Card card, int index)
     {
-        print(cards.Count);
         cards.RemoveAt(remove);
-        print(cards.Count);
-
-        print("remove: " + remove);
 
         cardSlots[index].GetComponent<DeckPlace>().disableCollider();
         cardSlots[index].GetComponent<SpriteRenderer>().sprite = null;

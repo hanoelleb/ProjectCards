@@ -5,6 +5,9 @@ using UnityEngine.EventSystems;
 
 public class FinishPlace : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHandler
 {
+    [SerializeField]
+    Sprite start;
+
     SpriteRenderer sr;
     List<Card> cards;
     // Start is called before the first frame update
@@ -23,20 +26,35 @@ public class FinishPlace : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHa
     public void OnDrop(PointerEventData eventData)
     {
         GameObject droppedObject = eventData.pointerDrag;
+        
+
         //handle from deck
         DeckPlace fromDeck = droppedObject.GetComponent<DeckPlace>();
         if (fromDeck != null)
         {
-            print("from deck");
+            Card deckCard = fromDeck.getCard();
+
+            if (cards.Count == 0 && deckCard.getNum() == 1)
+            {
+                cards.Add(deckCard);
+                sr.sprite = deckCard.getSprite();
+                fromDeck.removeCard();
+                return;
+            }
+
+            Card top = cards[cards.Count - 1];
+            if (top.GetType() == deckCard.GetType() && top.getNum() == deckCard.getNum() - 1)
+            {
+                cards.Add(deckCard);
+                sr.sprite = deckCard.getSprite();
+                fromDeck.removeCard();
+            }
             return;
         }
 
         CardPlace other = droppedObject.GetComponent<CardPlace>();
         Card newCard = other.getCard();
 
-        print(newCard.name);
-        print(newCard.getNum());
-        print("count " + cards.Count);
         if (cards.Count == 0 && newCard.getNum() == 1)
         {
             if (other.getChildren().Count == 0)
@@ -49,7 +67,7 @@ public class FinishPlace : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHa
             return;
         }
 
-        Card recent = cards[cards.Count-1];
+        Card recent = cards[cards.Count - 1];
         if (recent.GetType() == newCard.GetType() && recent.getNum() == newCard.getNum() - 1)
         {
             //its valid
@@ -65,14 +83,18 @@ public class FinishPlace : MonoBehaviour, IDragHandler, IEndDragHandler, IDropHa
 
     public void OnDrag(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 
     //dropped back onto card slot
     public void OnEndDrag(PointerEventData eventData)
     {
-        print("here??");
-        cards.RemoveAt(cards.Count - 1);
-        sr.sprite = cards[cards.Count - 1].getSprite();
+
+    }
+
+    public void clear()
+    {
+        cards.Clear();
+        sr.sprite = start;
     }
 }

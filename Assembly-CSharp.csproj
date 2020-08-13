@@ -60,6 +60,7 @@
      <Compile Include="Assets\DeckPlace.cs" />
      <Compile Include="Assets\FinishPlace.cs" />
      <Compile Include="Assets\GameManager.cs" />
+     <Compile Include="Assets\Quit.cs" />
      <Compile Include="Assets\Resources\Card.cs" />
      <Compile Include="Assets\Slot.cs" />
  <Reference Include="UnityEngine">

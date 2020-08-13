@@ -59,6 +59,40 @@ public class Slot : MonoBehaviour {
     public void setCards(List<Card> newCards)
     {
         cards = newCards;
+        //must have reset
+        if (!first)
+        {
+            if (cards.Count > 0)
+            {
+                int i = 0;
+                for (; i < cards.Count - 1; i++)
+                {
+                    cardPlace[i].GetComponent<SpriteRenderer>().sprite = cardBack;
+                    cardPlace[i].GetComponent<CardPlace>().setCard(cards[i]);
+                    cardPlace[i].GetComponent<CardPlace>().setIndex(i);
+                    cardPlace[i].GetComponent<CardPlace>().setParent(this);
+                }
+
+                cardPlace[cards.Count - 1].GetComponent<SpriteRenderer>().sprite = cards[cards.Count - 1].getSprite();
+                cardPlace[cards.Count - 1].GetComponent<CardPlace>().setCard(cards[cards.Count - 1]);
+                cardPlace[cards.Count - 1].GetComponent<CardPlace>().enableCollider();
+                cardPlace[cards.Count - 1].GetComponent<CardPlace>().setIndex(cards.Count - 1);
+                cardPlace[cards.Count - 1].GetComponent<CardPlace>().setParent(this);
+
+                i++;
+
+                while (i < 13)
+                {
+                    cardPlace[i].GetComponent<SpriteRenderer>().sprite = null;
+                    cardPlace[i].GetComponent<CardPlace>().setCard(null);
+                    cardPlace[i].GetComponent<CardPlace>().setIndex(i);
+                    cardPlace[i].GetComponent<CardPlace>().setParent(this);
+                    i++;
+                }
+
+               
+            }
+        }
     }
 
     public Card getCard(int i)
@@ -80,7 +114,6 @@ public class Slot : MonoBehaviour {
     {
         cards.Add(card);
         cardPlace[cardIndex].GetComponent<SpriteRenderer>().sprite = card.getSprite();
-        print(card.name + " has index " + cardIndex);
         cardPlace[cardIndex].GetComponent<CardPlace>().setIndex(cardIndex);
         cardPlace[cardIndex].GetComponent<CardPlace>().enableCollider();
         cardPlace[cardIndex].GetComponent<CardPlace>().setCard(card);
@@ -102,7 +135,6 @@ public class Slot : MonoBehaviour {
         else if (cardIndex < 0)
         {
             cardIndex = 0;
-            print("should enable");
             cardPlace[cardIndex].GetComponent<CardPlace>().enableCollider();
         }
     }

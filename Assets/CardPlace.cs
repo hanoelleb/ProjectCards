@@ -75,7 +75,9 @@ public class CardPlace : MonoBehaviour, IDropHandler, IDragHandler, IEndDragHand
             Card temp = fromDeck.getCard();
             if (this.getCard() == null && index == 0 && temp.getNum() == 13)
             {
-                parent.setCard(index+1, temp);
+                parent.setCard(index, temp);
+                fromDeck.removeCard();
+                return;
             }
 
 

@@ -6,9 +6,15 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     List<Card> deck;
+
+    [SerializeField]
+    List<Card> start;
+
     // Start is called before the first frame update
     void Start()
     {
+        start = new List<Card>(deck);
+
         shuffle();
 
         setSlots();
@@ -54,5 +60,28 @@ public class GameManager : MonoBehaviour
     {
         var cardDeck = GameObject.FindGameObjectWithTag("deck");
         cardDeck.GetComponent<Deck>().setCards(deck);
+    }
+
+    void clearFinishSlots()
+    {
+        var slots = GameObject.FindGameObjectsWithTag("finish");
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].GetComponent<FinishPlace>().clear();
+        }
+    }
+
+    public void reset()
+    {
+        clearFinishSlots();
+
+        deck = new List<Card>(start);
+
+        shuffle();
+
+        setSlots();
+
+        setDeck();
     }
 }
